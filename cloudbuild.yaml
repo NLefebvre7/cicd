@@ -8,3 +8,8 @@ steps:
     dir: 'node'
     entrypoint: 'npm'
     args: ['install']
+
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/cicd/cicd7', '.']
+images: ['gcr.io/cicd/cicd7']
