@@ -14,6 +14,12 @@ steps:
     args: ['install']
 
 steps:
-  - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/cicd/cicd7', '.']
-images: ['gcr.io/cicd/cicd7']
+  - name: 'docker:stable'
+    args: ['build', '-t', 'docker.io/choca777/cicd1:latest7', '.']
+images: ['docker.io/choca777/cicd1:latest7']
+
+
+#steps:
+#  - name: 'gcr.io/cloud-builders/docker'
+#    args: ['build', '-t', 'gcr.io/cicd/cicd7', '.']
+#images: ['gcr.io/cicd/cicd7']
