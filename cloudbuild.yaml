@@ -15,8 +15,8 @@ steps:
 
 steps:
   - name: 'docker:stable'
-    args: ['build', '-t', 'docker.io/choca777/cicd1:latest7', '.']
-images: ['docker.io/choca777/cicd1:latest7']
+    args: ['build', '-t', 'choca777/cicd1:latest7', '.']
+images: ['choca777/cicd1:latest7']
 
 
 #steps:
