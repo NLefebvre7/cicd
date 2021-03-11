@@ -1,9 +1,4 @@
-<<<<<<< Updated upstream
-# Getting Started   7777
-=======
-# Getting Started   7dsfsdf
->>>>>>> Stashed changes
-
+hgjhjghqeqsd
 ### Reference Documentation
 For further reference, please consider the following sections:
 
