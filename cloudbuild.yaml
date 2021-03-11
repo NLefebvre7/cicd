@@ -14,9 +14,10 @@ steps:
     args: ['build', '-t', 'gcr.io/cicd/cicd7', '.']
 artifacts:
   objects:
+    location: ['gs://my-bucket/artifacts/']
     paths:
     - "target/*.jar"
 images: ['gcr.io/cicd/cicd7
 
 
-
+ 
