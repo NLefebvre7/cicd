@@ -17,7 +17,4 @@ artifacts:
     location: ['gs://my-bucket/artifacts/']
     paths:
     - "target/*.jar"
-images: ['gcr.io/cicd/cicd7
-
-
- 
+images: ['gcr.io/cicd/cicd7]
