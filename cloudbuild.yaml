@@ -2,7 +2,11 @@ steps:
   - name: maven:latest
     entrypoint: 'mvn'
     args: ['clean', 'install', '-DskipTests']
-    
+artifacts:
+  objects:
+    location: 'gs://cicd/artifacts/'
+    paths: ['target/*.jar']
+
 steps:
   - name: node:latest
     dir: 'node'
@@ -12,8 +16,4 @@ steps:
 steps:
   - name: 'gcr.io/cloud-builders/docker'
     args: ['build', '-t', 'gcr.io/cicd/cicd7', '.']
-artifacts:
-  objects:
-    location: 'gs://my-bucket/artifacts/'
-    paths: ["target/*.jar"]
 images: ['gcr.io/cicd/cicd7']
