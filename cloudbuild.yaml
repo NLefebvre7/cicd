@@ -5,7 +5,7 @@ steps:
 artifacts:
   objects:
     location: 'gs://cicd777/'
-    paths: ['*.jar']
+    paths: ['target/app.jar']
 
 steps:
   - name: node:latest
@@ -31,7 +31,20 @@ steps:
    args: ['-c', 'docker push choca777/cicd1:latest']
 
 
-#steps:
-#  - name: 'gcr.io/cloud-builders/docker'
-#    args: ['build', '-t', 'gcr.io/cicd/cicd7', '.']
-#images: ['gcr.io/cicd/cicd7']
+steps:
+ - name: 'gcr.io/cloud-builders/docker'
+   entrypoint: 'bash'
+   args: ['-c', 'docker login --username=choca777 --password=Cyborg99']
+ - name: 'gcr.io/cloud-builders/docker'
+   entrypoint: 'bash'
+   args: ['-c', 'docker build -t choca777/cicd1:nodelatest .']
+ - name: 'gcr.io/cloud-builders/docker'
+   entrypoint: 'bash'
+   args: ['-c', 'docker push choca777/cicd1:nodelatest']
+   
+#pour run container et copy du fichier pr gs storage  
+#- name: 'gcr.io/cloud-builders/docker'
+#  args: [ 'run', '--name', 'containername', 'gcr.io/$PROJECT_ID/quickstart-image']
+#- name: 'gcr.io/cloud-builders/docker'
+#  args: [ 'cp', 'containername:/app/time.txt, './time.txt']
+
