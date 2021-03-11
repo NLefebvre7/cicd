@@ -2,10 +2,10 @@ steps:
   - name: maven:latest
     entrypoint: 'mvn'
     args: ['clean', 'install', '-DskipTests']
-artifacts:
-  objects:
-    location: 'gs://cicd777/'
-    paths: ['target/app.jar']
+#artifacts:
+#  objects:
+#    location: 'gs://cicd777/'
+#    paths: ['target/app.jar']
 
 steps:
   - name: node:latest
