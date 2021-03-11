@@ -5,7 +5,7 @@ steps:
 artifacts:
   objects:
     location: 'gs://cicd777/'
-    paths: ['target/*.jar']
+    paths: ['./*.jar']
 
 steps:
   - name: node:latest
