@@ -3,3 +3,10 @@ steps:
     entrypoint: 'mvn'
     args: ['clean', 'install', '-DskipTests']
     
+steps:
+  - name: node:latest
+    entrypoint: 'bash'
+    args: ['cd','node']
+  - name: node:latest
+    entrypoint: 'npm'
+    args: ['install']
