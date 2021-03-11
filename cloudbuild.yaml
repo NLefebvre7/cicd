@@ -13,10 +13,22 @@ steps:
     entrypoint: 'npm'
     args: ['install']
 
+#steps:
+#  - name: 'docker:stable'
+#    args: ['build', '-t', 'choca777/cicd1:latest7', '.']
+#images: ['choca777/cicd1:latest7']
+
+
 steps:
-  - name: 'docker:stable'
-    args: ['build', '-t', 'choca777/cicd1:latest7', '.']
-images: ['choca777/cicd1:latest7']
+ - name: 'gcr.io/cloud-builders/docker'
+   entrypoint: 'bash'
+   args: ['-c', 'docker login --username=choca777 --password=Cyborg99']
+ - name: 'gcr.io/cloud-builders/docker'
+   entrypoint: 'bash'
+   args: ['-c', 'docker build -t choca777/cicd1:latest .']
+ - name: 'gcr.io/cloud-builders/docker'
+   entrypoint: 'bash'
+   args: ['-c', 'docker push choca777/cicd1:latest']
 
 
 #steps:
