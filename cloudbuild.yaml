@@ -12,4 +12,11 @@ steps:
 steps:
   - name: 'gcr.io/cloud-builders/docker'
     args: ['build', '-t', 'gcr.io/cicd/cicd7', '.']
-images: ['gcr.io/cicd/cicd7']
+artifacts:
+  objects:
+    paths:
+    - "target/*.jar"
+images: ['gcr.io/cicd/cicd7
+
+
+
