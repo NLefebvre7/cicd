@@ -4,7 +4,7 @@ steps:
     args: ['clean', 'install', '-DskipTests']
 artifacts:
   objects:
-    location: 'gs://cicd/artifacts/'
+    location: 'gs://cicd/'
     paths: ['target/*.jar']
 
 steps:
