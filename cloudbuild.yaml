@@ -1,2 +1,5 @@
 steps:
-- name: 'gcr.io/cloud-builders/npm'
+  - name: maven:3.6.0-jdk-11-slim
+    entrypoint: 'mvn'
+    args: ['clean', 'install', '-DskipTests']
+    
